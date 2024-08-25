@@ -1,0 +1,37 @@
+.container {
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .card {
+    background-color: #8ae79e; /* Cor verde suave */
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .card-h:hover {
+    transform: scale(1.05);
+}
+  
+  .btn {
+    border-radius: 20px;
+  }
+  .card-body {
+    padding: 20px;
+  }
+  
+  h2, h4 {
+    color: #333;
+  }
+  
+  .card-title {
+    font-size: 1.2em;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  

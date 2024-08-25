@@ -1,0 +1,100 @@
+.container-fluid {
+  height: 100%;
+}
+
+.bg-dark {
+  background-color: #1e1e2f !important;
+}
+
+.bg-secondary {
+  background-color: #292942 !important;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+  color: white;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-t1{
+  background: url('../../../assets/images/treinamento1.png') no-repeat center center;
+  background-size: cover;
+  height: 300px;
+  background-position: 50% 15%;
+
+}
+
+.card-t2{
+  background: url('../../../assets/images/treinamento2.png') no-repeat center center;
+  background-size: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.card .card-body {
+  position: relative;
+  z-index: 1; /* Garante que o texto fique acima da camada opaca */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+input:checked+.slider {
+  background-color: #2196f3;
+}
+
+input:checked+.slider:before {
+  transform: translateX(20px);
+}

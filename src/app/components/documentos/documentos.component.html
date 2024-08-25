@@ -1,0 +1,92 @@
+<div class="container-fluid min-vh-100 d-flex row">
+  <div class="d-flex my-5">
+    <!-- Documentos Pessoais -->
+    <div class="container col-lg-5">
+      <h4 class="text-center mb-4">Documentos Pessoais</h4>
+      <div class="card card-body mb-4">
+        <h5 class="card-title text-center">Nome</h5>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 mb-4" *ngFor="let doc of personalDocuments">
+          <div class="card card-h text-center">
+            <div class="card-body">
+              <p class="card-text">{{ doc }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-info col-3 center">Mais Documentos</button>
+      </div>
+    </div>
+
+    <!-- Documentos Compliance -->
+    <div class="container col-lg-5">
+      <h4 class="text-center mb-4">Documentos Compliance</h4>
+      <div class="card card-body mb-4">
+        <h5 class="card-title text-center">
+          Documento Principal | Normas da Empresa
+        </h5>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 mb-4" *ngFor="let doc of complianceDocuments">
+          <div class="card card-h text-center">
+            <div class="card-body">
+              <p class="card-text">{{ doc }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-info col-3 center">Mais Documentos</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex mb-5">
+    <!-- Solicitação de Documentos -->
+    <div class="container col-lg-5">
+      <h4 class="text-center mb-4">Solicitação de Documentos</h4>
+      <div class="card card-body mb-4">
+        <h5 class="card-title text-center">Documentos Não Solicitados</h5>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 mb-4" *ngFor="let doc of requestDocuments">
+          <div class="card card-h text-center">
+            <div class="card-body">
+              <p class="card-text">{{ doc }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-info col-3 center">Solicitar Documentos</button>
+      </div>
+    </div>
+
+    <!-- IA -->
+    <div class="container col-lg-5">
+      <h4 class="text-center mb-4">Duvidas? Fale com nossa I.A.</h4>
+      <div class="card p-5 bg-dark mb-4" style="color: white">
+        <div class="card-body text-center">
+          <h5 class="card-title">Olá, como posso ajudar?</h5>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-10">
+          <input
+            type="text"
+            class="form-control p-3"
+            placeholder="Qual o documento necessario para ..."
+          />
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary p-3 fw-bold">Enviar</button>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
