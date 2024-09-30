@@ -7,3 +7,5 @@ router.post('/', controller.post);
 router.put('/:id_funcionario', controller.put);
 
 module.exports = router;
+
+

@@ -1,4 +1,5 @@
 const oracledb = require('oracledb');
+oracledb.autoCommit = true;
 
 const conectar = async () => {
     try {
@@ -30,8 +31,10 @@ exports.get = async () => {
 exports.create = async (data) => {
     try {
         const con = await conectar();
-        con.execute('INSERT INTO sprint_funcionarios VALUES(:id_funcionario, :nome, :sobrenome, :email, :senha, :id_cargo, :id_departamento)',
-            [data.id_funcionario, data.nome, data.sobrenome, data.email, data.senha, data.id_cargo, data.id_departamento]);
+        con.execute(`INSERT INTO sprint_funcionarios VALUES
+            (:id_funcionario, :nome, :sobrenome, :email, :senha, :id_cargo, :id_departamento)`,
+            [data.id_funcionario, data.nome, data.sobrenome, data.email, data.senha, data.id_cargo,
+            data.id_departamento]);
     } catch (err) {
         throw err;
     }
@@ -40,8 +43,12 @@ exports.create = async (data) => {
 exports.update = async (id, data) => {
     try {
         const con = await conectar();
-        con.query('UPDATE sprint_funcionarios SET nome = :nome, sobrenome = :sobrenome, email = :email, senha = :senha, id_cargo = :id_cargo, id_departamento = :id_departamento WHERE id_funcionario = :id_funcionario',
-            [data.nome, data.sobrenome, data.email, data.senha, data.id_cargo, data.id_departamento, data.id_funcionario]);
+        con.query(`UPDATE sprint_funcionarios
+            SET nome = :nome, sobrenome = :sobrenome, email = :email, senha = :senha,
+            id_cargo = :id_cargo, id_departamento = :id_departamento 
+            WHERE id_funcionario = :id_funcionario`,
+            [data.nome, data.sobrenome, data.email, data.senha, data.id_cargo, data.id_departamento,
+            data.id_funcionario]);
     } catch (err) {
         throw err;
     }
